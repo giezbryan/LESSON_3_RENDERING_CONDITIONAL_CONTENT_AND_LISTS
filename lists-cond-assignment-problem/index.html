@@ -22,9 +22,9 @@
       <!-- When clicking "Add Task" a new task with the entered text should be added -->
       <input type="text" v-model="EnteredTaskValue">
       <button @click="AddTasks">Add Task</button>
-      <p v-show="Tasks.length === 0"> No task have been added yet - Please start adding some! </p>
-      <ul v-show= "Tasks.length === 0">
-        <li> Tasks </li>
+      <p v-if="Tasks.length === 0"> No task have been added yet - Please start adding some! </p>
+      <ul v-else>
+        <li v-for="ListofTasks in Tasks"> {{ ListofTasks }}</li>
         <!-- 2) Output the list of tasks here -->
       </ul>
       <!-- 3) When the below button is pressed, the list should be shown or hidden -->
